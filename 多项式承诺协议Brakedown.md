@@ -26,13 +26,9 @@ Brakedown多项式承诺方案由线性时间编码多项式承诺方案（linea
 * 更高阶张量： 三维或更高维的数组，例如彩色图像 (每个像素包含 RGB 三个值)。
 
 张量的积有很多种，如外积、内积、直积、Kronecker Product等，我们在这里只介绍直积（通常称为张量积），描述为：两个任意阶张量，第一个张量的每一个分量乘以第二个张量中的每一个分量，它们组合的集合仍然是一个张量，称为第一个张量乘以第二个张量的直积。直积的阶数等于因子张量阶数之和。下面是一个直观的例子：
-$$\left[\begin{matrix}a_1\\a_2\end{matrix}\right]\otimes\left[\begin{matrix}b_1&b_2&b_3\end{matrix}\right]=
-\left[\begin{matrix}a_1b_1&a_1b_2&a_1b_3\\a_2b1&a_2b_2&a_2b_3\end{matrix}\right]
-$$
+$$\left[\begin{matrix}a_1\\a_2\end{matrix}\right]\otimes\left[\begin{matrix}b_1&b_2&b_3\end{matrix}\right]=\left[\begin{matrix}a_1b_1&a_1b_2&a_1b_3\\a_2b1&a_2b_2&a_2b_3\end{matrix}\right]$$
 通常说的张量积就是直积，张量积具有扩充向量维度的作用，上式中两个一维向量扩充为二维矩阵，在ZK里面用到的就是张量直积，即将多项式系数组成的方阵分解为两个向量的张量积，如下式：
-$$
-\left[\begin{matrix}a_1b_1&a_1b_2&a_1b_3\\a_2b1&a_2b_2&a_2b_3\\a_3b1&a_3b_2&a_3b_3\end{matrix}\right]=\left[\begin{matrix}a_1\\a_2\\a_3\end{matrix}\right]\otimes\left[\begin{matrix}b_1&b_2&b_3\end{matrix}\right]=\mathbf{a}\otimes\mathbf{b}
-$$
+$$\left[\begin{matrix}a_1b_1&a_1b_2&a_1b_3\\a_2b1&a_2b_2&a_2b_3\\a_3b1&a_3b_2&a_3b_3\end{matrix}\right]=\left[\begin{matrix}a_1\\a_2\\a_3\end{matrix}\right]\otimes\left[\begin{matrix}b_1&b_2&b_3\end{matrix}\right]=\mathbf{a}\otimes\mathbf{b}$$
 
 ### 2.2 Error Correcting Code and Linear Code
 纠错码是一种用于控制数据传输或存储过程中错误的技术。它通过在原始数据中添加冗余信息来实现错误检测和纠正，从而确保数据的完整性和可靠性，在通信领域有着广泛的应用，主要工作过程包括：编码(Encoding)、传输/存储、解码(Decoding)和数据恢复。其中重复码是纠错码的一个简单例子，其编码原理是将每个数据位发送3次，解码时以重复次数较多的数位为准，具体如下表。重复码最多纠正一位错误位，或两位丢失位。
