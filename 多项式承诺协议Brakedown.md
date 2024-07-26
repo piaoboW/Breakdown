@@ -11,7 +11,7 @@ KZG多项式承诺在椭圆曲线上实现，其优点是应用于单变量多�
 
 ## 2. Preliminaries
 Brakedown多项式承诺方案由线性时间编码多项式承诺方案（linear-time commitment scheme）演化而来，主要是使用Expander Graph对线性时间编码部分做了改进，它的主要技术组成如下图所示。
-![alt text](<fig_Breakdown/Breakdown technology.png>)
+![alt text](<fig_Breakedown/Brakedown.png>)
 <p align="center"><font face="黑体" size=3.>Figure 1 Brakedown技术组成</font></p>
 
 ### 2.1 张量（tensor）与张量积
